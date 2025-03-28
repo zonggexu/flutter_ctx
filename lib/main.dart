@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ctx/presentation/pages/root_page/root_page.dart';
+import 'package:get/get.dart';
 
 Future<void> loadOtherInit() async {}
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.Protocols
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),

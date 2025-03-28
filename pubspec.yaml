@@ -1,79 +1,104 @@
 name: flutter_ctx
 description: "A new Flutter project."
-# The following line prevents the package from being accidentally published to
-# pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+# 以下这一行可以防止该软件包被意外发布到 pub.dev，避免使用 `flutter pub publish` 进行发布。
+# 这对于私有包（private packages）来说是推荐的做法。
+publish_to: 'none' # 如果你希望将该包发布到 pub.dev，请删除此行。
 
-# The following defines the version and build number for your application.
-# A version number is three numbers separated by dots, like 1.2.43
-# followed by an optional build number separated by a +.
-# Both the version and the builder number may be overridden in flutter
-# build by specifying --build-name and --build-number, respectively.
-# In Android, build-name is used as versionName while build-number used as versionCode.
-# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
-# In iOS, build-name is used as CFBundleShortVersionString while build-number is used as CFBundleVersion.
-# Read more about iOS versioning at
+# 以下定义了应用程序的版本号和构建编号。
+# 版本号由三个用点分隔的数字组成，例如 1.2.43，
+# 后面可以跟一个可选的构建号，以 "+" 号分隔。
+# 在 Flutter 构建时，可以通过指定 --build-name 和 --build-number 来覆盖这些值。
+
+# 在 Android 中，build-name 用作 versionName，而 build-number 用作 versionCode。
+# 了解更多 Android 版本管理信息，请访问：
+# https://developer.android.com/studio/publish/versioning
+
+# 在 iOS 中，build-name 用作 CFBundleShortVersionString，
+# 而 build-number 用作 CFBundleVersion。
+# 了解更多 iOS 版本管理信息，请访问：
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-# In Windows, build-name is used as the major, minor, and patch parts
-# of the product and file versions while build-number is used as the build suffix.
+
+# 在 Windows 中，build-name 用作产品和文件版本的主要、次要和补丁部分，
+# 而 build-number 作为构建后缀使用。
 version: 1.0.0+1
 
 environment:
   sdk: ^3.5.1
 
-# Dependencies specify other packages that your package needs in order to work.
-# To automatically upgrade your package dependencies to the latest versions
-# consider running `flutter pub upgrade --major-versions`. Alternatively,
-# dependencies can be manually updated by changing the version numbers below to
-# the latest version available on pub.dev. To see which dependencies have newer
-# versions available, run `flutter pub outdated`.
+# 依赖项（dependencies）指定了此项目运行所需的其他软件包。
+# 要自动升级你的包依赖到最新版本，可以运行：
+# `flutter pub upgrade --major-versions`。
+#
+# 另外，也可以手动修改下面的版本号，将其更新为 pub.dev 上的最新版本。
+# 如果想查看哪些依赖项有更新版本可用，可以运行：
+# `flutter pub outdated`。
 dependencies:
   flutter:
     sdk: flutter
 
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
+  # 以下内容将Cupertino Icons字体添加到您的应用程序中。
+  # 与CupertoIcons类一起使用，用于iOS风格的图标。
   cupertino_icons: ^1.0.8
+
+  get: 4.6.6  # GetX 是一个轻量级但功能强大的状态管理、路由管理和依赖注入框架
+  fluttertoast: 8.2.5  # 用于显示 Toast 消息，支持 Android 和 iOS
+  shared_preferences: 2.3.2  # 本地存储插件，适用于存储小量键值对数据（如用户设置）
+  logger: 2.3.0  # 日志工具，用于调试和记录应用日志
+  json_annotation: 4.9.0  # JSON 序列化/反序列化工具，与 `json_serializable` 配合使用
+  get_storage: 2.1.1  # GetX 提供的本地存储解决方案，比 `shared_preferences` 读写更快
+  url_launcher: 6.3.1  # 用于在外部浏览器或其他应用中打开 URL
+  flutter_inappwebview: 6.0.0  # 强大的 WebView 组件，支持高级 Web 功能（如 JavaScript 交互）
+  cached_network_image: 3.3.0  # 图片缓存插件，优化网络图片加载，提高性能
+  dio: 5.7.0  # 强大的 HTTP 客户端库，支持拦截器、请求取消、文件上传下载等
+  talker: 4.7.1 # 打印
+  talker_flutter: 4.5.6 # 打印
+  talker_dio_logger: 4.7.1
+
+  connectivity_plus: 6.1.1
+  flutter_spinkit: 5.2.1
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
-  flutter_lints: ^4.0.0
+  # 下面的“flutter_lints”包包含一组推荐的lints，
+  # 鼓励良好的编码实践。包装提供的棉绒套装为
+  # 在位于您的根目录下的'分析_选项.yaml '文件中激活
+  # pack。有关停用特定棉绒的信息，请参阅该文件
+  # 规则并激活其他规则。
+  flutter_lints: 4.0.0
+  flutter_launcher_icons: 0.13.1    # 图标生成插件
+  flutter_native_splash: 2.3.8 # 自定义启动页
+  build_runner: 2.4.7
+  json_serializable: 6.9.0
 
-# For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
 
-# The following section is specific to Flutter packages.
+# 有关此文件的通用飞镖部分的信息，请参阅
+# 后续页面：https://dart.dev/tools/pub/pubspec
+# 以下部分特定于Flutter包。
 flutter:
 
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
+  # 以下行确保材质图标字体为
+  # 包含在您的应用程序中，以便您可以使用中的图标
+  # 材质图标类。
   uses-material-design: true
 
-  # To add assets to your application, add an assets section, like this:
+  # 要向应用程序添加资源文件，请在此处添加 `assets` 部分，例如：
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
-  # An image asset can refer to one or more resolution-specific "variants", see
+  # 图像资源可以引用一个或多个特定分辨率的 "变体"，详情请参见：
   # https://flutter.dev/to/resolution-aware-images
 
-  # For details regarding adding assets from package dependencies, see
+  # 有关从依赖包中添加资源的详细信息，请参见：
   # https://flutter.dev/to/asset-from-package
 
-  # To add custom fonts to your application, add a fonts section here,
-  # in this "flutter" section. Each entry in this list should have a
-  # "family" key with the font family name, and a "fonts" key with a
-  # list giving the asset and other descriptors for the font. For
-  # example:
+  # 要向应用程序添加自定义字体，请在 "flutter" 部分添加 `fonts` 部分。
+  # 每个条目都应包含一个 "family" 作为字体系列名称，以及 "fonts" 列表，
+  # 该列表包含字体文件路径及其他描述符。例如：
+  #
   # fonts:
   #   - family: Schyler
   #     fonts:
@@ -86,5 +111,5 @@ flutter:
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
-  # For details regarding fonts from package dependencies,
-  # see https://flutter.dev/to/font-from-package
+  # 有关从依赖包中加载字体的详细信息，请参见：
+  # https://flutter.dev/to/font-from-package
