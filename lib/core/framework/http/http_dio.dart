@@ -35,7 +35,7 @@ class HttpDio {
 
   HttpDio._internal() {
     _dio = Dio(BaseOptions(
-      baseUrl: "https://cloud.jtsee.com", // 默认 BaseUrl
+      baseUrl: "https://api.swiftmiss.fun", // 默认 BaseUrl
       connectTimeout: const Duration(seconds: 10),
       receiveTimeout: const Duration(seconds: 10),
       sendTimeout: const Duration(seconds: 10),
@@ -123,9 +123,8 @@ class HttpDio {
   }
 
   void _cancelLogPrint(dynamic e, String url) {
-    Dlog(e);
     if (e is DioException && CancelToken.isCancel(e)) {
-      Dlog('取消请求接口： $url');
+      Slog('取消请求接口： $url');
     }
   }
 
@@ -134,7 +133,7 @@ class HttpDio {
       code = NetErrorCode.unknownError.code;
       msg = '未知异常';
     }
-    Dlog('接口请求异常： code: $code, mag: $msg');
+    Slog('接口请求异常： code: $code, mag: $msg');
     onError?.call(code, msg);
   }
 

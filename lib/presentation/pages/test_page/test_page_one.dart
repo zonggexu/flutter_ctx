@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ctx/core/framework/http/http_tool.dart';
 import 'package:flutter_ctx/core/utils/log_util.dart';
+import 'package:flutter_ctx/data/datasources/server/apis.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
 class TestPageOne extends StatelessWidget {
@@ -38,16 +39,15 @@ class TestPageOne extends StatelessWidget {
     };
 
     HttpTool.get(
-      url,
+      APIs.health,
       params,
       showLoding: true,
       success: (data) {
         // 处理成功响应
-        Dlog('Success: $data');
+        Slog('Success: $data');
       },
       fail: (code, msg) {
         // 处理失败响应
-        Dlog('Error: $code, $msg');
       },
     );
   }

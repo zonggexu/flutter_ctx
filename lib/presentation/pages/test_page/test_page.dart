@@ -1,54 +1,104 @@
-import 'dart:convert';
-
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ctx/core/utils/log_util.dart';
+import 'package:flutter_ctx/presentation/pages/test_page/test_byte_video_effects.dart';
+import 'package:flutter_ctx/presentation/pages/test_page/test_viedeo.dart';
+import 'package:get/get.dart';
 
-class TestPage extends StatelessWidget {
+class TestPage extends StatefulWidget {
   const TestPage({super.key});
 
   @override
+  State<TestPage> createState() => TestPageState();
+}
+
+class TestPageState extends State<TestPage> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    Map<String, dynamic> testData = {
-      "id": 1,
-      "name": "测试用户",
-      "age": 25,
-      "isActive": true,
-      "tags": ["Flutter", "Dart", "Developer"],
-      "address": {"city": "北京", "zip": "100000"},
-      "addressz": {"city": "北京", "zip": "100000"},
-      "addressf": {"city": "北京", "zip": "100000"},
-    };
-    var encoder = JsonEncoder.withIndent('  ');
-    String prettyPrint = encoder.convert(testData);
-    var array = [
-      "Flutter",
-      "Dart",
-      "Developer",
-      "Dart",
-      "Developer",
-      "Dart",
-      "Developer",
-    ];
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        title: const Text("测试1"),
+        title: const Text("神秘空间"),
       ),
-      resizeToAvoidBottomInset: false,
-      body: SafeArea(
-        child: Center(
-          child: ElevatedButton(
-            onPressed: () {
-              Dlog("这是一条测试");
-              Dlog("这是一条测试", mode: FLogMode.error);
-              Dlog(prettyPrint, mode: FLogMode.info);
-              Dlog(array, mode: FLogMode.warning);
-              Dlog("你好", mode: FLogMode.trace);
-            },
-            child: const Text('测试'),
+      body: Builder(builder: (context) {
+        return Center(
+          child: Column(
+            children: [
+              CupertinoButton(
+                color: Colors.purple,
+                child: const Text("测试一"),
+                onPressed: () async {
+                  await testGetTo(1);
+                },
+              ),
+              const SizedBox(height: 20),
+              CupertinoButton(
+                color: Colors.purple,
+                child: const Text("测试二"),
+                onPressed: () async {
+                  await testGetTo(2);
+                },
+              ),
+              const SizedBox(height: 20),
+              CupertinoButton(
+                color: Colors.purple,
+                child: const Text("字体动画特效"),
+                onPressed: () async {
+                  await testGetTo(3);
+                },
+              ),
+              const SizedBox(height: 20),
+              CupertinoButton(
+                color: Colors.purple,
+                child: const Text("透明视频播放"),
+                onPressed: () async {
+                  await testGetTo(4);
+                },
+              ),
+              SizedBox(height: 20),
+            ],
           ),
-        ),
-      ),
+        );
+      }),
     );
+  }
+
+  Future<void> testOne() async {
+    // Get.dialog(
+    //   AuthCaptcha(onConfirmCallback: (value) {
+    //     Get.back();
+    //   }),
+    // );
+    // Get.to(() => const ChangePasswordView(
+    //       topTitle: "设置密码",
+    //       isFromChangePassword: true,
+    //       onlyReadPhone: "13128700789",
+    //     ));
+  }
+
+  Future<void> testTwo() async {
+    Get.to(() => const TransparentVideoDemo());
+  }
+
+  Future<void> testGetTo(int index) async {
+    switch (index) {
+      case 1:
+        await testOne();
+        break;
+      case 2:
+        await testTwo();
+        break;
+      case 3:
+        Get.to(() => const TestByteVideoEffects());
+        break;
+      case 4:
+        Get.to(() => const TransparentVideoDemo());
+        break;
+      default:
+        print("Default case executed");
+    }
   }
 }

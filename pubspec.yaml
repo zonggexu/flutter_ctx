@@ -57,6 +57,9 @@ dependencies:
   connectivity_plus: 6.1.1
   flutter_spinkit: 5.2.1
 
+  flutter_alpha_player_plugin: 1.0.5 # 字节特效
+  fvp: 0.31.2 # 视频播放 支持透明
+
 
 dev_dependencies:
   flutter_test:
@@ -88,6 +91,8 @@ flutter:
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/
 
   # 图像资源可以引用一个或多个特定分辨率的 "变体"，详情请参见：
   # https://flutter.dev/to/resolution-aware-images

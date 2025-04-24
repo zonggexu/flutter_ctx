@@ -30,7 +30,7 @@ class LogUtil {
     var chain = Chain.current();
     chain = chain.foldFrames((frame) => frame.isCore || frame.package == "flutter");
     final frames = chain.toTrace().frames;
-    final idx = frames.indexWhere((element) => element.member == "Dlog");
+    final idx = frames.indexWhere((element) => element.member == "Slog");
     if (idx == -1 || idx + 1 >= frames.length) {
       if (isEnabled) logFunction("打印失效 无文件信息 :: $message");
       return;
@@ -54,7 +54,7 @@ class LogUtil {
   static void e(dynamic message) => _printLog(talker.error, message);
 }
 
-void Dlog(dynamic msg, {FLogMode mode = FLogMode.info}) {
+void Slog(dynamic msg, {FLogMode mode = FLogMode.info}) {
   var log = msg;
   if (msg is Map || msg is List) {
     log = const JsonEncoder.withIndent('  ').convert(msg);

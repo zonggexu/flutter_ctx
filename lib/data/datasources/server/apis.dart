@@ -9,18 +9,6 @@ class APIs {
   /// 刷新token
   static const String refreshToken = '/mock/refreshToken';
 
-  /// 获取分页数据
-  static const String getPage = '/mock/pages';
-
-  /// 获取分页分组数据
-  static const String getGroupPage = '/mock/groupPages';
-
-  /// 获取固定数据
-  static const String getSimpleDictList = '/mock/simpleDictList';
-
-  /// 获取固定数据
-  static const String getSimpleDict = '/mock/dict';
-
-  /// 微信朋友圈
-  static const String getFriendsCircleList = '/mock/wx/moments';
+  /// test
+  static const String health = '/health';
 }
