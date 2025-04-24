@@ -16,16 +16,16 @@ class _TransparentVideoDemoState extends State<TransparentVideoDemo> {
   void initState() {
     super.initState();
     // asset
-    // _ctrl = VideoPlayerController.asset(
-    //   'assets/demo4.webm', // ← 透明素材
-    //   videoPlayerOptions: VideoPlayerOptions(mixWithOthers: true),
-    // )..setLooping(true);
-
-    // net
-    _ctrl = VideoPlayerController.networkUrl(
-      Uri.parse('https://jtsee-1306129707.cos.ap-beijing.myqcloud.com/test/demo4.webm'),
+    _ctrl = VideoPlayerController.asset(
+      'assets/demo4.webm', // ← 透明素材
       videoPlayerOptions: VideoPlayerOptions(mixWithOthers: true),
     )..setLooping(true);
+
+    // net
+    // _ctrl = VideoPlayerController.networkUrl(
+    //   Uri.parse(''),
+    //   videoPlayerOptions: VideoPlayerOptions(mixWithOthers: true),
+    // )..setLooping(true);
     _init = _ctrl.initialize();
   }
 

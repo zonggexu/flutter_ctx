@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ctx/core/macro/frame_macro.dart';
+import 'package:flutter_ctx/core/utils/log_util.dart';
 import 'package:flutter_ctx/presentation/pages/test_page/test_byte_video_effects.dart';
 import 'package:flutter_ctx/presentation/pages/test_page/test_viedeo.dart';
 import 'package:get/get.dart';
@@ -34,7 +36,7 @@ class TestPageState extends State<TestPage> {
                   await testGetTo(1);
                 },
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: 20.pr()),
               CupertinoButton(
                 color: Colors.purple,
                 child: const Text("测试二"),
@@ -66,18 +68,7 @@ class TestPageState extends State<TestPage> {
     );
   }
 
-  Future<void> testOne() async {
-    // Get.dialog(
-    //   AuthCaptcha(onConfirmCallback: (value) {
-    //     Get.back();
-    //   }),
-    // );
-    // Get.to(() => const ChangePasswordView(
-    //       topTitle: "设置密码",
-    //       isFromChangePassword: true,
-    //       onlyReadPhone: "13128700789",
-    //     ));
-  }
+  Future<void> testOne() async {}
 
   Future<void> testTwo() async {
     Get.to(() => const TransparentVideoDemo());
@@ -98,7 +89,7 @@ class TestPageState extends State<TestPage> {
         Get.to(() => const TransparentVideoDemo());
         break;
       default:
-        print("Default case executed");
+        Slog("Default case executed");
     }
   }
 }

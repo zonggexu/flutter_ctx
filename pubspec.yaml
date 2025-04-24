@@ -52,11 +52,10 @@ dependencies:
   dio: 5.7.0  # 强大的 HTTP 客户端库，支持拦截器、请求取消、文件上传下载等
   talker: 4.7.1 # 打印
   talker_flutter: 4.5.6 # 打印
-  talker_dio_logger: 4.7.1
-
-  connectivity_plus: 6.1.1
-  flutter_spinkit: 5.2.1
-
+  talker_dio_logger: 4.7.1 # 打印
+  connectivity_plus: 6.1.1  # 网络连接状态监听插件，支持 Android、iOS 和 Web
+  flutter_spinkit: 5.2.1 # Loading 动画
+  flutter_screenutil: 5.9.3 # 屏幕适配
   flutter_alpha_player_plugin: 1.0.5 # 字节特效
   fvp: 0.31.2 # 视频播放 支持透明
 
